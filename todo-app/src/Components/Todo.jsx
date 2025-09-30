@@ -32,7 +32,7 @@ export default function Todo(){ // parent(holds state, fetch todo, pass handlers
             title : title,
             completed : false
         }
-        setTodos([newTodo, ...todos]) // first newTodo then rest of the todos, so that new todos are added at top
+        title ? setTodos([newTodo, ...todos]) : console.log('Error fetching data') // first newTodo then rest of the todos, so that new todos are added at top
     }
 
     function toggleTodo(id){
@@ -48,7 +48,7 @@ export default function Todo(){ // parent(holds state, fetch todo, pass handlers
     
     return(
         <div>
-            <h2>Todo App</h2>
+            <h1>Todo App</h1>
             {/* <form onSubmit={handleSubmit}> // moved to todoForm component
                 <input onChange={e=> setTodo(e.target.value)} value={todo} type="text" />
                 <button type="submit">Add</button>
