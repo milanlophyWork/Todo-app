@@ -46,6 +46,12 @@ form input{
   gap: 20px;
   color: #584b99;
 }
+.todo input{
+  width: 18px;
+  height: 18px;
+  accent-color: rgb(103, 49, 166);
+  cursor: pointer;
+}
 .todo_title{
   width: 100%;
   max-width: 600px;
