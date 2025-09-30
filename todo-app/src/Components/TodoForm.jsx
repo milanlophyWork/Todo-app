@@ -12,7 +12,7 @@ export default function TodoForm({addTodo}){ // handles adding new todo
     return(
         <form onSubmit={handleSubmit}>
             <input onChange={e=> setTodo(e.target.value)} value={todo} type="text" />
-            <button type="submit">Add</button>
+            <button className="add" type="submit">Add</button>
 
         
         </form>

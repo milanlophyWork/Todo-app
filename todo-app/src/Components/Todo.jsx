@@ -20,7 +20,7 @@ export default function Todo(){ // parent(holds state, fetch todo, pass handlers
 
     // fetching todos
     useEffect(()=> {
-        fetch('https://jsonplaceholder.typicode.com/todos?_limit=20')
+        fetch('https://jsonplaceholder.typicode.com/todos?_limit=30')
         .then(res => res.json())
         .then(data => setTodos(data))
         .catch(err => console.error("Error fetching todos", err))
@@ -48,7 +48,7 @@ export default function Todo(){ // parent(holds state, fetch todo, pass handlers
     
     return(
         <div>
-            <h1>Todo App</h1>
+            <h1 className="title">Todo App</h1>
             {/* <form onSubmit={handleSubmit}> // moved to todoForm component
                 <input onChange={e=> setTodo(e.target.value)} value={todo} type="text" />
                 <button type="submit">Add</button>

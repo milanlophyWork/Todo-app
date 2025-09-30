@@ -2,7 +2,7 @@ import TodoItem from "./TodoItem";
 
 export default function TodoList({todos, removeTodo, toggleTodo}){ // loops through todos and renders each todoitem
     return(
-        <div>
+        <div className="todo_bar">
             {todos.map(todo => 
                 <TodoItem 
                     key={todo.id} 
