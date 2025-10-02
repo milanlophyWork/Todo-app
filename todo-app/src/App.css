@@ -33,7 +33,9 @@ form input{
 .add{
   width: 100%;
   max-width: 100px;
-  border-radius: 30px;
+  height: 60px;
+  border-radius: 20px;
+  font-weight: 900;
 }
 .todo_bar{
   margin-top: 130px;

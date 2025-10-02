@@ -6,6 +6,7 @@ export default function Todo(){ // parent(holds state, fetch todo, pass handlers
     
     // const [todo, setTodo] = useState('') // moved to todoItem component
     const [todos, setTodos] = useState([])
+    const [error, setError] = useState('')
 
     /*function handleSubmit(e){ // moved to todoForm
         e.preventDefault()
@@ -23,7 +24,7 @@ export default function Todo(){ // parent(holds state, fetch todo, pass handlers
         fetch('https://jsonplaceholder.typicode.com/todos?_limit=30')
         .then(res => res.json())
         .then(data => setTodos(data))
-        .catch(err => console.error("Error fetching todos", err))
+        .catch(err => setError("Error fetching todos"))
     },[])
 
     function addTodo(title){
@@ -32,7 +33,7 @@ export default function Todo(){ // parent(holds state, fetch todo, pass handlers
             title : title,
             completed : false
         }
-        title ? setTodos([newTodo, ...todos]) : console.log('Error fetching data') // first newTodo then rest of the todos, so that new todos are added at top
+        title ? setTodos([newTodo, ...todos]) : setError('Error fetching data') // first newTodo then rest of the todos, so that new todos are added at top
     }
 
     function toggleTodo(id){
@@ -43,7 +44,7 @@ export default function Todo(){ // parent(holds state, fetch todo, pass handlers
     }
 
     function removeTodo(id){
-        setTodos(todos.filter(todo => todo.id !== id))
+        setTodos(todos.filter(todo => todo.id !== id)) // mismatched id is kept. Update the todos array by removing todo with matched id
     }
     
     return(
@@ -64,7 +65,7 @@ export default function Todo(){ // parent(holds state, fetch todo, pass handlers
             </form> */}
 
             <TodoForm addTodo={addTodo}/>
-            <TodoList todos={todos} removeTodo={removeTodo} toggleTodo={toggleTodo}/>
+            <TodoList todos={todos} removeTodo={removeTodo} toggleTodo={toggleTodo} error={error}/>
         </div>
     )
 }
